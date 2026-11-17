@@ -13,12 +13,12 @@
     // Sign up free at https://www.emailjs.com
     // Then follow the setup steps at the bottom of this file
     const EMAILJS_PUBLIC_KEY    = "N5DD-T1NPIYvPzvsI";
-    const EMAILJS_SERVICE_ID    = "template_o5lx85r";
+    const EMAILJS_SERVICE_ID    = "PASTE_YOUR_SERVICE_ID";
     const EMAILJS_OWNER_TMPL    = "template_2f1rzl3";
-    const EMAILJS_CONFIRM_TMPL  = "template_o5lx85r";
+    const EMAILJS_CONFIRM_TMPL  = "PASTE_YOUR_CONFIRM_TEMPLATE_ID";
     const OWNER_EMAIL           = "email.vikashpathak@gmail.com";
     // ────────────────────────────────────────────────────────────────────
-    (function(){ emailjs.init(EMAILJS_PUBLIC_KEY); })();
+    if (window.emailjs && EMAILJS_PUBLIC_KEY && EMAILJS_PUBLIC_KEY !== "PASTE_YOUR_PUBLIC_KEY") { emailjs.init(EMAILJS_PUBLIC_KEY); }
   </script>
 
   <script type="module">
@@ -454,7 +454,7 @@
       .pricing-grid{grid-template-columns:1fr;} .upgrade-plans{grid-template-columns:1fr;} .earn-banner{flex-direction:column;} .pricing-section{padding:56px 20px;}
     }
   </style>
-<link rel="canonical" href="https://vikashp23.github.io/EduMatch/">
+<link rel="canonical" href="https://vikashpathak-in.github.io/EduMatch/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="EduMatch, find tutor, home tuition, online tuition, tutor discovery, India">
 <meta property="og:type" content="website">
@@ -1154,21 +1154,6 @@
 <div class="modal-overlay" id="modal-cross">
   <div class="modal" style="max-width:440px;text-align:center;">
     <button class="modal-close" onclick="closeModal('cross')">✕</button>
-    <div id="cross-icon" style="font-size:3rem;margin-bottom:12px;">🎯</div>
-    <h2 id="cross-title" style="font-size:1.4rem;margin-bottom:8px;">One more thing!</h2>
-    <p id="cross-body" style="color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:24px;"></p>
-    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
-      <button id="cross-yes" class="btn-large" style="padding:12px 24px;" onclick="crossPromoYes()"></button>
-      <button class="btn-large-outline" style="padding:12px 24px;" onclick="closeModal('cross')">Maybe Later</button>
-    </div>
-  </div>
-</div>
-
-
-<!-- MODAL: CROSS PROMOTION -->
-<div class="modal-overlay" id="modal-cross">
-  <div class="modal" style="max-width:440px;text-align:center;">
-    <button class="modal-close" onclick="closeModal('cross')">✕</button>
     <div id="cross-icon" style="font-size:3.5rem;margin-bottom:16px;">🎉</div>
     <h2 id="cross-title" style="font-size:1.5rem;margin-bottom:8px;">You're Live!</h2>
     <p id="cross-msg" style="color:var(--muted);font-size:.92rem;line-height:1.7;margin-bottom:28px;">
@@ -1282,7 +1267,6 @@
       <label>Google Meet / Zoom Link (optional)</label>
       <input type="url" id="edit-t-meet" placeholder="https://meet.google.com/xxx-xxxx-xxx">
     </div>
-    <div class="mf-group"><label>🎥 Google Meet Link</label><input type="url" id="edit-t-meet" placeholder="https://meet.google.com/xxx-xxxx-xxx"></div>
     <div class="mf-group"><label>About You</label><textarea id="edit-t-bio"></textarea></div>
     <button class="btn-modal-submit" onclick="saveEditTutor()">💾 Save Changes</button>
   </div>
@@ -1372,8 +1356,10 @@
   // ── EMAIL & WHATSAPP NOTIFICATIONS ──────────────────────────────────────
 
   function _emailsReady() {
-    return EMAILJS_PUBLIC_KEY !== "PASTE_YOUR_PUBLIC_KEY" &&
-           EMAILJS_SERVICE_ID !== "PASTE_YOUR_SERVICE_ID";
+    return !!(window.emailjs && EMAILJS_PUBLIC_KEY !== "PASTE_YOUR_PUBLIC_KEY" &&
+           EMAILJS_SERVICE_ID !== "PASTE_YOUR_SERVICE_ID" &&
+           EMAILJS_OWNER_TMPL !== "PASTE_YOUR_OWNER_TEMPLATE_ID" &&
+           EMAILJS_CONFIRM_TMPL !== "PASTE_YOUR_CONFIRM_TEMPLATE_ID");
   }
 
   // Send email to OWNER
@@ -1816,8 +1802,7 @@ _Thank you for using EduMatch!_ 🙏`;
     document.getElementById('edit-t-rate').value = t.rate||'';
     document.getElementById('edit-t-location').value = t.location||'';
     document.getElementById('edit-t-bio').value = t.bio||'';
-    document.getElementById('edit-t-meet').value = t.meet||'';
-    document.getElementById('edit-t-meet').value = t.meetLink||'';
+    document.getElementById('edit-t-meet').value = t.meetLink || t.meet || '';
     clearSelectedClasses('edit-t-classes');
     if(Array.isArray(t.classes)) setSelectedClasses('edit-t-classes', t.classes);
     openModal('edit-tutor');
