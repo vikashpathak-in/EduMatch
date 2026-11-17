@@ -453,7 +453,164 @@
       .subjects-section,.testimonials{padding:56px 20px;}
       .pricing-grid{grid-template-columns:1fr;} .upgrade-plans{grid-template-columns:1fr;} .earn-banner{flex-direction:column;} .pricing-section{padding:56px 20px;}
     }
-  </style>
+  
+    /* ── EDU MATCH VISUAL REFRESH ── */
+    :root{
+      --ink:#17243a;--cream:#f5f8fc;--warm:#edf3f8;
+      --accent:#2563eb;--accent2:#0f766e;--gold:#d6a84f;
+      --muted:#63738a;--card-bg:#ffffff;--border:#dce5ef;
+    }
+    body{background:#f5f8fc;color:#17243a;line-height:1.55;}
+    nav{padding:14px clamp(18px,5vw,76px);background:rgba(255,255,255,.94);border-bottom:1px solid #e4ebf3;box-shadow:0 3px 18px rgba(28,48,78,.045);}
+    .nav-logo{font-family:'DM Sans',sans-serif;font-size:1.55rem;font-weight:850;letter-spacing:-.06em;color:#17243a;}
+    .nav-logo span{color:#2563eb;}
+    .nav-links{gap:clamp(12px,2vw,28px);}
+    .nav-links a{color:#52647c;font-weight:600;font-size:.84rem;}
+    .nav-links a:hover{color:#2563eb;}
+    .btn-ghost{border-color:#d7e1ec;color:#263750;background:#fff;}
+    .btn-ghost:hover{background:#eff5ff;color:#1d4ed8;border-color:#b9cdf0;}
+    .btn-solid,.btn-search,.btn-submit,.btn-modal-submit{background:#2563eb;}
+    .btn-solid:hover,.btn-search:hover,.btn-submit:hover,.btn-modal-submit:hover{background:#1d4ed8;}
+    .hero{min-height:690px;min-height:min(790px,100svh);padding:132px clamp(20px,7vw,104px) 76px;gap:clamp(30px,6vw,90px);background:radial-gradient(ellipse at 85% 20%,rgba(37,99,235,.10),transparent 38%),linear-gradient(180deg,#fff 0%,#f5f8fc 100%);}
+    .hero::before{background:radial-gradient(circle,rgba(15,118,110,.10) 0%,transparent 70%);}
+    .hero-tag{background:#eaf2ff;border-color:#d5e4fb;color:#31588f;font-weight:700;}
+    .hero-tag::before{background:#0f9b8e;}
+    .hero h1{font-family:'DM Sans',sans-serif;font-size:clamp(2.65rem,5vw,4.5rem);font-weight:850;letter-spacing:-.065em;line-height:1.04;color:#15243b;max-width:720px;}
+    .hero h1 em{font-style:normal;color:#2563eb;font-weight:850;}
+    .hero-desc{font-size:1.06rem;color:#5c6e85;max-width:500px;}
+    .btn-large{background:#2563eb;border-radius:13px;box-shadow:0 8px 20px rgba(37,99,235,.18);}
+    .btn-large:hover{background:#1d4ed8;box-shadow:0 12px 24px rgba(37,99,235,.22);}
+    .btn-large-outline{border:1.5px solid #cbd8e8;border-radius:13px;color:#243650;background:#fff;}
+    .btn-large-outline:hover{border-color:#2563eb;color:#1d4ed8;background:#f6f9ff;}
+    .hero-stats{gap:clamp(18px,4vw,42px);border-color:#dfe7f0;}
+    .stat-num{font-family:'DM Sans',sans-serif;font-weight:800;color:#1e3a5f;}
+    .stat-label{color:#64748b;}
+    .hero-join-card{border:1px solid #dce6f2;border-radius:26px;padding:clamp(24px,3vw,38px);box-shadow:0 20px 55px rgba(31,55,90,.10);animation:none;text-align:left;position:relative;overflow:hidden;}
+    .hero-join-card::before{content:'';position:absolute;top:0;left:0;right:0;height:5px;background:linear-gradient(90deg,#2563eb,#0f9b8e);}
+    .hjc-icon{width:58px;height:58px;display:grid;place-items:center;border-radius:18px;background:#eaf2ff;font-size:2rem;}
+    .hjc-title{font-family:'DM Sans',sans-serif;font-size:1.35rem;font-weight:800;color:#1b2c45;}
+    .hjc-sub{color:#64748b;}
+    .slot{background:#f3f7fb;color:#41546d;border:1px solid #e7edf4;padding:11px 13px;border-radius:12px;}
+    .slot-dot{background:#0f9b8e;}
+    .search-section{padding:0 clamp(18px,6vw,90px) 76px;}
+    .search-box{max-width:1040px;padding:clamp(22px,3vw,34px);border:1px solid #e0e8f1;border-radius:22px;box-shadow:0 16px 44px rgba(27,48,78,.08);}
+    .search-box h3{font-family:'DM Sans',sans-serif;font-size:1.25rem;font-weight:800;color:#1d304b;}
+    .field select,.field input{background:#f7f9fc;border-color:#dce5ef;border-radius:11px;}
+    .field select:focus,.field input:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.10);}
+    .section{padding:82px clamp(20px,7vw,104px);}
+    .section-label{color:#2563eb;font-weight:800;letter-spacing:.12em;}
+    .section-title{font-family:'DM Sans',sans-serif;font-weight:850;letter-spacing:-.045em;color:#1b2c45;}
+    .steps-grid{gap:18px;margin-top:34px;}
+    .step{border:1px solid #e0e8f1;border-radius:18px;box-shadow:0 5px 20px rgba(31,55,90,.035);}
+    .step-num{color:#e9f0f8;}
+    .step h4{font-family:'DM Sans',sans-serif;font-weight:800;color:#203550;}
+    .tutors-header{align-items:center;margin-bottom:28px;}
+    .tutors-grid{grid-template-columns:repeat(auto-fit,minmax(265px,1fr));gap:18px;}
+    .t-card,.req-card,.test-card{border:1px solid #e0e8f1;border-radius:18px;box-shadow:0 5px 20px rgba(31,55,90,.045);}
+    .t-card:hover,.req-card:hover,.test-card:hover{box-shadow:0 14px 34px rgba(31,55,90,.10);}
+    .t-name,.req-name,.test-name{color:#203550;}
+    .btn-connect{background:#172f50;border-radius:10px;}
+    .btn-connect:hover{background:#2563eb;}
+    .tag{background:#f2f6fb;border-color:#e1e9f2;color:#50627a;}
+    .tag.green{background:#e8f7f3;border-color:#c8ebe1;color:#0f766e;}
+    .tag.orange{background:#eef4ff;border-color:#d8e5ff;color:#2858a6;}
+    .req-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;}
+    .req-card{background:#fff;}
+    .req-badge{background:#eaf2ff;color:#2457a6;border-radius:9px;padding:7px 11px;}
+    .section-note{color:#64748b;margin-top:10px;max-width:700px;font-size:.94rem;line-height:1.6;}
+    .empty-box{border:1.5px dashed #cbd8e8;border-radius:20px;background:#fff;}
+    .empty-box h3{font-family:'DM Sans',sans-serif;color:#203550;font-weight:800;}
+    .perk{background:#f2f6fb;border:1px solid #e7edf4;border-radius:11px;color:#50627a;}
+    .subjects-section{padding:68px clamp(20px,7vw,104px);background:linear-gradient(135deg,#172f50,#1e4166);color:#fff;}
+    .subjects-section .section-label{color:#8cc8ff;}
+    .subjects-scroll{display:grid;grid-template-columns:repeat(auto-fit,minmax(145px,1fr));gap:12px;overflow:visible;padding:0;margin-top:28px;}
+    .subj-card{min-width:0;padding:19px 14px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);border-radius:15px;}
+    .subj-card:hover{background:rgba(255,255,255,.14);border-color:#80b9ff;transform:translateY(-3px);}
+    .subj-count{color:#c0d2e6;}
+    .testimonials{padding:82px clamp(20px,7vw,104px);background:#edf3f9;}
+    .test-card{background:#fff;}
+    .test-quote{font-family:'DM Sans',sans-serif;color:#40536d;}
+    .tutor-cta{padding:82px clamp(20px,7vw,104px);gap:clamp(24px,5vw,72px);}
+    .tutor-cta-left h2,.tutor-cta-right h3{font-family:'DM Sans',sans-serif;font-weight:850;letter-spacing:-.04em;}
+    .tutor-cta-right{background:linear-gradient(145deg,#172f50,#1f496f);border-radius:22px;box-shadow:0 18px 45px rgba(23,47,80,.16);}
+    .benefit-icon{background:#eaf2ff;color:#2457a6;}
+    .form-group input,.form-group select{border-radius:10px;}
+    .pricing-section{padding:82px clamp(20px,7vw,104px);background:#172f50;}
+    .pricing-grid{gap:18px;}
+    .plan-card{border-radius:20px;padding:30px 25px;background:rgba(255,255,255,.07);}
+    .plan-card.popular{background:rgba(214,168,79,.10);}
+    .plan-name,.plan-price{font-family:'DM Sans',sans-serif;}
+    .btn-plan{border-radius:11px;}
+    .modal{border-radius:22px;box-shadow:0 25px 80px rgba(7,20,40,.28);}
+    .modal h2{font-family:'DM Sans',sans-serif;font-weight:850;letter-spacing:-.035em;color:#1d304b;}
+    .mf-group input,.mf-group select,.mf-group textarea{background:#f8fafc;border-color:#dce5ef;border-radius:10px;}
+    .mf-group input:focus,.mf-group select:focus,.mf-group textarea:focus{border-color:#2563eb;box-shadow:0 0 0 3px rgba(37,99,235,.09);}
+    .class-check-item{background:#f4f7fb;border-color:#dce5ef;border-radius:9px;}
+    .class-check-item.selected{background:#eaf2ff;border-color:#2563eb;color:#2457a6;}
+    .class-check-item.selected .ck{background:#2563eb;border-color:#2563eb;}
+    footer{background:#12243b;padding:58px clamp(20px,7vw,104px) 28px;}
+    .footer-col ul li a:hover{color:#9cc8ff;}
+    .btn-meet{border-radius:9px;}
+    #toast{background:#172f50;border-radius:12px;}
+    #announcement-bar{background:linear-gradient(100deg,#172f50,#2563eb)!important;}
+    @media(max-width:1100px){
+      nav{padding:13px 20px;}
+      .nav-links{gap:12px;}
+      .nav-links a{font-size:.78rem;}
+      .nav-cta .btn-ghost{display:none;}
+      .hero{padding-left:28px;padding-right:28px;gap:26px;}
+    }
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;min-height:auto;padding:112px 22px 52px;}
+      .hero-right{display:block;}
+      .hero-join-card{max-width:620px;margin:0 auto;}
+      .hero-stats{margin-top:30px;padding-top:24px;}
+      .steps-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .tutors-grid,.test-grid{grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+      .subjects-scroll{grid-template-columns:repeat(3,minmax(0,1fr));}
+      .footer-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+    }
+    @media(max-width:600px){
+      nav{padding:12px 16px;}
+      .nav-logo{font-size:1.35rem;}
+      .nav-cta .btn-ghost{display:none;}
+      .nav-cta .btn-solid{padding:9px 13px;font-size:.78rem;}
+      .hero{padding:100px 18px 42px;}
+      .hero h1{font-size:clamp(2.35rem,11vw,3.25rem);}
+      .hero-desc{font-size:.97rem;margin-bottom:25px;}
+      .hero-actions{display:grid;grid-template-columns:1fr;gap:10px;}
+      .hero-actions button{width:100%;justify-content:center;}
+      .hero-stats{justify-content:space-between;gap:10px;}
+      .stat-num{font-size:1.65rem;}
+      .stat-label{font-size:.72rem;}
+      .search-section{padding:0 14px 48px;}
+      .search-box{padding:20px 16px;border-radius:17px;}
+      .section{padding:55px 18px;}
+      .tutors-header{align-items:flex-start;gap:14px;flex-direction:column;}
+      .tutors-header .btn-large-outline{width:100%;}
+      .steps-grid{grid-template-columns:1fr;gap:12px;margin-top:25px;}
+      .subjects-section,.testimonials,.pricing-section{padding:55px 18px;}
+      .subjects-scroll{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .subj-card{padding:16px 9px;}
+      .subj-name{font-size:.8rem;}
+      .subj-count{font-size:.68rem;}
+      .tutors-grid,.req-grid,.test-grid,.pricing-grid{grid-template-columns:1fr;}
+      .req-grid{gap:12px;}
+      .tutor-cta{padding:55px 18px;grid-template-columns:1fr;gap:26px;}
+      .tutor-cta-right{padding:25px 18px;}
+      .footer-grid{grid-template-columns:1fr 1fr;gap:25px 16px;}
+      .footer-bottom{align-items:flex-start;gap:10px;flex-direction:column;}
+      .modal-overlay{padding:10px;align-items:flex-end;}
+      .modal{padding:28px 18px 22px;border-radius:22px 22px 12px 12px;max-height:92svh;}
+      .mf-row{grid-template-columns:1fr;}
+      .class-checks{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .earn-banner{padding:22px 18px;}
+      #toast{left:12px;right:12px;top:70px;max-width:none;}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
+    }
+</style>
 <link rel="canonical" href="https://vikashpathak-in.github.io/EduMatch/">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="keywords" content="EduMatch, find tutor, home tuition, online tuition, tutor discovery, India">
@@ -569,7 +726,7 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-left">
-    <div class="hero-tag">Free demo class — no commitment</div>
+    <div class="hero-tag">Tutor discovery for Classes 1–10</div>
     <h1>Find the <em>right</em> tutor for your child's growth</h1>
     <p class="hero-desc">Expert home & online tuition for Classes 1–10. Personalized, bilingual, concept-focused teaching that delivers real results.</p>
     <div class="hero-actions">
@@ -585,8 +742,8 @@
   <div class="hero-right">
     <div class="hero-join-card">
       <div class="hjc-icon">🎓</div>
-      <div class="hjc-title">Be Among Our First Tutors!</div>
-      <div class="hjc-sub">Register now — your profile appears on this page instantly. Students are already searching for tutors in these subjects:</div>
+      <div class="hjc-title">Build your teaching profile</div>
+      <div class="hjc-sub">Create a free profile so students and parents can discover the subjects and classes you teach:</div>
       <div class="hjc-slots">
         <div class="slot"><span class="slot-dot"></span>Maths & Science · Class 6–10</div>
         <div class="slot"><span class="slot-dot"></span>All Subjects · Class 1–5</div>
@@ -673,7 +830,7 @@
   <div class="tutors-header">
     <div>
       <div class="section-label">Looking for Tutors</div>
-      <div class="section-title">Student Requests</div>
+      <div class="section-title">Student Requests</div><p class="section-note">Browse learning needs by subject and class. Student names and phone numbers are not shown publicly.</p>
     </div>
     <button class="btn-large-outline" style="padding:10px 20px;font-size:.88rem;" onclick="openModal('student')">+ Post Requirement</button>
   </div>
@@ -930,24 +1087,31 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal('tutor')">✕</button>
     <h2>Join as a Tutor</h2>
-    <p class="modal-sub">Your profile will appear <strong>live on this website</strong> the moment you hit submit.</p>
-    <div style="background:#e8f5f0;border:1px solid #b7ddd0;border-radius:10px;padding:10px 14px;font-size:.83rem;color:var(--accent2);margin-bottom:20px;">🎉 <strong>Free for your first 30 days!</strong> After that, keep your listing active from just ₹99/month.</div>
+    <p class="modal-sub">Add your subjects, classes and teaching mode. Your profile will be reviewed and listed on EduMatch.</p>
+    <div style="background:#e8f5f0;border:1px solid #b7ddd0;border-radius:10px;padding:10px 14px;font-size:.83rem;color:var(--accent2);margin-bottom:20px;"><strong>Free during the launch period.</strong> No payment is required to register right now.</div>
     <div class="mf-row">
       <div class="mf-group"><label>Full Name *</label><input type="text" id="t-name" placeholder="Your full name"></div>
       <div class="mf-group"><label>Phone Number *</label><input type="tel" id="t-phone" placeholder="10-digit mobile"></div>
     </div>
-    <div class="mf-row">
-      <div class="mf-group"><label>Subject(s) *</label>
-        <select id="t-subject">
-          <option value="">Select subject</option>
-          <option>Mathematics</option><option>Science</option><option>English</option>
-          <option>Hindi</option><option>Physics</option><option>Chemistry</option>
-          <option>Biology</option><option>All Subjects (Class 1–5)</option>
-        </select>
+    <div class="mf-group">
+      <label>Subjects You Teach * (select all that apply)</label>
+      <div class="class-checks" id="t-subjects">
+        <div class="class-check-item" data-value="Mathematics" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Mathematics</div>
+        <div class="class-check-item" data-value="Science" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Science</div>
+        <div class="class-check-item" data-value="English" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>English</div>
+        <div class="class-check-item" data-value="Hindi" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Hindi</div>
+        <div class="class-check-item" data-value="Physics" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Physics</div>
+        <div class="class-check-item" data-value="Chemistry" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Chemistry</div>
+        <div class="class-check-item" data-value="Biology" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Biology</div>
+        <div class="class-check-item" data-value="Social Studies" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Social Studies</div>
+        <div class="class-check-item" data-value="Computer" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Computer</div>
+        <div class="class-check-item" data-value="Sanskrit" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>Sanskrit</div>
+        <div class="class-check-item" data-value="EVS" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>EVS</div>
+        <div class="class-check-item" data-value="All Subjects" onclick="toggleClass(this,'t-subjects')"><span class="ck">✓</span>All Subjects</div>
       </div>
-      <div class="mf-group"><label>Teaching Mode</label>
-        <select id="t-mode"><option>Home Tuition</option><option>Online</option><option>Both</option></select>
-      </div>
+    </div>
+    <div class="mf-group"><label>Teaching Mode</label>
+      <select id="t-mode"><option>Home Tuition</option><option>Online</option><option>Both</option></select>
     </div>
     <!-- MULTI-CLASS SELECTOR -->
     <div class="mf-group">
@@ -997,7 +1161,7 @@
   <div class="modal">
     <button class="modal-close" onclick="closeModal('student')">✕</button>
     <h2>Post Your Requirement</h2>
-    <p class="modal-sub">Your request appears <strong>live instantly</strong> so tutors can contact you directly.</p>
+    <p class="modal-sub">Share the subjects and classes you need. Your contact details are kept off the public listing.</p>
     <div class="mf-row">
       <div class="mf-group"><label>Parent / Student Name *</label><input type="text" id="s-name" placeholder="Your name"></div>
       <div class="mf-group"><label>Phone Number *</label><input type="tel" id="s-phone" placeholder="10-digit mobile"></div>
@@ -1728,22 +1892,20 @@ _Thank you for using EduMatch!_ 🙏`;
     const icons=['📚','🎒','✏️','📓','🔬','📐','🖊️','📔'];
     grid.innerHTML = list.slice().reverse().map((s,i)=>{
       const classes = Array.isArray(s.classes)?s.classes.join(', '):(s.classLevel||'');
+      const subjects = (Array.isArray(s.subjects)?s.subjects.join(', '):(s.subject||'')).trim();
+      const enquiry = encodeURIComponent('Hello EduMatch, I am interested in a student tuition requirement. Reference: ' + (s.id || 'website listing'));
       return `
       <div class="req-card">
         <div class="req-icon">${icons[i%icons.length]}</div>
-        <div class="req-name">${esc(s.name)}</div>
+        <div class="req-name">Student tuition requirement</div>
         <div class="req-detail">
-          ${(Array.isArray(s.subjects)?s.subjects.join(', '):(s.subject||'')).trim()?`<strong>Subject:</strong> ${esc(Array.isArray(s.subjects)?s.subjects.join(', '):(s.subject||''))}<br>`:''}
+          ${subjects?`<strong>Subject:</strong> ${esc(subjects)}<br>`:''}
           ${classes?`<strong>Class:</strong> ${esc(classes)}<br>`:''}
           ${s.mode?`<strong>Mode:</strong> ${esc(s.mode)}<br>`:''}
           ${s.location?`📍 ${esc(s.location)}`:''}
           ${s.note?`<br><em>${esc(s.note).slice(0,60)}${s.note.length>60?'…':''}</em>`:''}
         </div>
-        <a class="req-badge" href="tel:${esc(s.phone)}">📞 Contact</a>
-        <div class="card-actions">
-          <button class="btn-edit" onclick="startEdit('student','${esc(s.id)}')">✏️ Edit</button>
-          <button class="btn-delete" onclick="startDelete('student','${esc(s.id)}')">🗑️ Delete</button>
-        </div>
+        <a class="req-badge" href="https://wa.me/${OWNER_PHONE}?text=${enquiry}" target="_blank" rel="noopener">Ask EduMatch about this</a>
       </div>`;
     }).join('');
   };
