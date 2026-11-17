@@ -1692,31 +1692,17 @@ _Thank you for using EduMatch!_ 🙏`;
 
   function applyFilters() {
     const sub = document.getElementById('filter-subject').value.trim().toLowerCase();
-    const cls = document.getElementById('filter-class').value.trim().toLowerCase().replace(/^class\\s*/, '');
+    const cls = document.getElementById('filter-class').value.trim().toLowerCase().replace('class ', '');
     const mode = document.getElementById('filter-mode').value.trim().toLowerCase();
     const filtered = allTutors.filter(t => {
       const subjects = Array.isArray(t.subjects) ? t.subjects : [t.subject || ''];
       if (sub && !subjects.some(item => String(item).toLowerCase() === sub)) return false;
       const classes = Array.isArray(t.classes) ? t.classes : [];
       if (cls) {
-        const exactClass = classes.some(item => String(item).toLowerCase().replace(/^class\\s*/, '') === cls);
-        const legacyRange = String(t.classRange || '').toLowerCase();
-        const rangeMatch = legacyRange && new RegExp('(^|[^0-9])' + cls.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\  function applyFilters() {
-    const sub = document.getElementById('filter-subject').value.toLowerCase();
-    const cls = document.getElementById('filter-class').value.toLowerCase();
-    const mode = document.getElementById('filter-mode').value.toLowerCase();
-    const filtered = allTutors.filter(t=>{
-      const subjStr=(Array.isArray(t.subjects)?t.subjects.join(' '):(t.subject||'')).toLowerCase();
-      if(sub && !subjStr.includes(sub)) return false;
-      const classStr = (Array.isArray(t.classes)?t.classes.join(' '):(t.classRange||'')).toLowerCase();
-      if(cls && !classStr.includes(cls.replace('class ',''))) return false;
-      if(mode && !(t.mode||'').toLowerCase().includes(mode)) return false;
-      return true;
-    });
-    _drawTutors(filtered);
-    document.getElementById('tutors').scrollIntoView({behavior:'smooth'});
-    showToast(filtered.length?`Found ${filtered.length} tutor(s)`:'No tutors match those filters yet');
-  }') + '([^0-9]|$)').test(legacyRange);
+        const exactClass = classes.some(item => String(item).toLowerCase().replace('class ', '').trim() === cls);
+        const nums = String(t.classRange || '').match(/[0-9]+/g) || [];
+        const rangeMatch = nums.length === 1 ? nums[0] === cls :
+          nums.length >= 2 && Number(cls) >= Number(nums[0]) && Number(cls) <= Number(nums[1]);
         if (!exactClass && !rangeMatch) return false;
       }
       const tutorMode = String(t.mode || '').toLowerCase();
@@ -1727,7 +1713,6 @@ _Thank you for using EduMatch!_ 🙏`;
     document.getElementById('tutors').scrollIntoView({behavior:'smooth'});
     showToast(filtered.length ? `Found ${filtered.length} tutor(s)` : 'No tutors match those filters yet');
   }
-
   // ── RENDER: STUDENTS ───────────────────────────────────────────────────────
   window._renderStudents = function(list) {
     allStudents = list;
