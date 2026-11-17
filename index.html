@@ -688,19 +688,20 @@
 
 <!-- SUBJECTS -->
 <section class="subjects-section" id="subjects">
-  <div class="section-label">All Subjects</div>
-  <div class="section-title" style="color:var(--cream);">Every subject. Every class.</div>
+  <div class="section-label">Browse by Subject</div>
+  <div class="section-title" style="color:var(--cream);">Find tutors by subject</div>
+  <p style="color:rgba(255,255,255,.62);margin-top:10px;max-width:560px;line-height:1.6;">Choose a subject to see matching tutor profiles. Counts update automatically as tutors register.</p>
   <div class="subjects-scroll">
-    <div class="subj-card"><div class="subj-icon">🔢</div><div class="subj-name">Mathematics</div><div class="subj-count">Class 1–10</div></div>
-    <div class="subj-card"><div class="subj-icon">🔬</div><div class="subj-name">Science</div><div class="subj-count">Class 6–10</div></div>
-    <div class="subj-card"><div class="subj-icon">📖</div><div class="subj-name">English</div><div class="subj-count">Class 1–10</div></div>
-    <div class="subj-card"><div class="subj-icon">🇮🇳</div><div class="subj-name">Hindi</div><div class="subj-count">Class 1–10</div></div>
-    <div class="subj-card"><div class="subj-icon">⚡</div><div class="subj-name">Physics</div><div class="subj-count">Class 9–10</div></div>
-    <div class="subj-card"><div class="subj-icon">🧪</div><div class="subj-name">Chemistry</div><div class="subj-count">Class 9–10</div></div>
-    <div class="subj-card"><div class="subj-icon">🌿</div><div class="subj-name">Biology</div><div class="subj-count">Class 9–10</div></div>
-    <div class="subj-card"><div class="subj-icon">🌍</div><div class="subj-name">Social Studies</div><div class="subj-count">Class 6–10</div></div>
-    <div class="subj-card"><div class="subj-icon">📐</div><div class="subj-name">All Subjects</div><div class="subj-count">Class 1–5</div></div>
-    <div class="subj-card"><div class="subj-icon">🖥️</div><div class="subj-name">Computer</div><div class="subj-count">Class 6–10</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Mathematics" onclick="selectSubject('Mathematics')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Mathematics')}"><div class="subj-icon">🔢</div><div class="subj-name">Mathematics</div><div class="subj-count"><span data-subject-count="Mathematics">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Science" onclick="selectSubject('Science')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Science')}"><div class="subj-icon">🔬</div><div class="subj-name">Science</div><div class="subj-count"><span data-subject-count="Science">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="English" onclick="selectSubject('English')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('English')}"><div class="subj-icon">📖</div><div class="subj-name">English</div><div class="subj-count"><span data-subject-count="English">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Hindi" onclick="selectSubject('Hindi')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Hindi')}"><div class="subj-icon">🇮🇳</div><div class="subj-name">Hindi</div><div class="subj-count"><span data-subject-count="Hindi">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Physics" onclick="selectSubject('Physics')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Physics')}"><div class="subj-icon">⚡</div><div class="subj-name">Physics</div><div class="subj-count"><span data-subject-count="Physics">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Chemistry" onclick="selectSubject('Chemistry')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Chemistry')}"><div class="subj-icon">🧪</div><div class="subj-name">Chemistry</div><div class="subj-count"><span data-subject-count="Chemistry">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Biology" onclick="selectSubject('Biology')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Biology')}"><div class="subj-icon">🌿</div><div class="subj-name">Biology</div><div class="subj-count"><span data-subject-count="Biology">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Social Studies" onclick="selectSubject('Social Studies')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Social Studies')}"><div class="subj-icon">🌍</div><div class="subj-name">Social Studies</div><div class="subj-count"><span data-subject-count="Social Studies">0</span> tutors · View</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="All Subjects" onclick="selectSubject('')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('')}"><div class="subj-icon">📐</div><div class="subj-name">All Subjects</div><div class="subj-count"><span data-subject-count="All Subjects">0</span> tutors · View all</div></div>
+    <div class="subj-card" role="button" tabindex="0" data-subject="Computer" onclick="selectSubject('Computer')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectSubject('Computer')}"><div class="subj-icon">🖥️</div><div class="subj-name">Computer</div><div class="subj-count"><span data-subject-count="Computer">0</span> tutors · View</div></div>
   </div>
 </section>
 
@@ -1626,6 +1627,7 @@ _Thank you for using EduMatch!_ 🙏`;
     allTutors = list;
     _drawTutors(list);
     document.getElementById('stat-tutors').textContent = list.length;
+    updateSubjectCounts();
   };
   function _drawTutors(list) {
     const grid = document.getElementById('tutors-grid');
@@ -1672,7 +1674,34 @@ _Thank you for using EduMatch!_ 🙏`;
     }).join('');
   }
 
+  function selectSubject(subject) {
+    document.getElementById('filter-subject').value = subject;
+    applyFilters();
+  }
+
+  function updateSubjectCounts() {
+    document.querySelectorAll('[data-subject-count]').forEach(el => {
+      const subject = el.getAttribute('data-subject-count');
+      const count = subject === 'All Subjects' ? allTutors.length : allTutors.filter(t => {
+        const subjects = Array.isArray(t.subjects) ? t.subjects : [t.subject || ''];
+        return subjects.some(item => String(item).toLowerCase() === subject.toLowerCase());
+      }).length;
+      el.textContent = count;
+    });
+  }
+
   function applyFilters() {
+    const sub = document.getElementById('filter-subject').value.trim().toLowerCase();
+    const cls = document.getElementById('filter-class').value.trim().toLowerCase().replace(/^class\\s*/, '');
+    const mode = document.getElementById('filter-mode').value.trim().toLowerCase();
+    const filtered = allTutors.filter(t => {
+      const subjects = Array.isArray(t.subjects) ? t.subjects : [t.subject || ''];
+      if (sub && !subjects.some(item => String(item).toLowerCase() === sub)) return false;
+      const classes = Array.isArray(t.classes) ? t.classes : [];
+      if (cls) {
+        const exactClass = classes.some(item => String(item).toLowerCase().replace(/^class\\s*/, '') === cls);
+        const legacyRange = String(t.classRange || '').toLowerCase();
+        const rangeMatch = legacyRange && new RegExp('(^|[^0-9])' + cls.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\\\  function applyFilters() {
     const sub = document.getElementById('filter-subject').value.toLowerCase();
     const cls = document.getElementById('filter-class').value.toLowerCase();
     const mode = document.getElementById('filter-mode').value.toLowerCase();
@@ -1687,6 +1716,16 @@ _Thank you for using EduMatch!_ 🙏`;
     _drawTutors(filtered);
     document.getElementById('tutors').scrollIntoView({behavior:'smooth'});
     showToast(filtered.length?`Found ${filtered.length} tutor(s)`:'No tutors match those filters yet');
+  }') + '([^0-9]|$)').test(legacyRange);
+        if (!exactClass && !rangeMatch) return false;
+      }
+      const tutorMode = String(t.mode || '').toLowerCase();
+      if (mode && tutorMode !== mode && tutorMode !== 'both') return false;
+      return true;
+    });
+    _drawTutors(filtered);
+    document.getElementById('tutors').scrollIntoView({behavior:'smooth'});
+    showToast(filtered.length ? `Found ${filtered.length} tutor(s)` : 'No tutors match those filters yet');
   }
 
   // ── RENDER: STUDENTS ───────────────────────────────────────────────────────
@@ -1872,7 +1911,7 @@ _Thank you for using EduMatch!_ 🙏`;
     clearFields(['t-name','t-phone','t-email','t-rate','t-location','t-bio','t-meet']);
     clearSelectedClasses('t-subjects');clearSelectedClasses('t-classes');
     document.getElementById('tutors').scrollIntoView({behavior:'smooth'});
-    showCrossPromo('Tutor');
+    showCrossPromo('tutor');
   }
 
   // ── SUBMIT: STUDENT MODAL ──────────────────────────────────────────────────
@@ -1895,9 +1934,8 @@ _Thank you for using EduMatch!_ 🙏`;
     btn.disabled=false;btn.textContent='📢 Post Requirement Live';
     clearFields(['s-name','s-phone','s-email','s-location','s-note']);
     clearSelectedClasses('s-subjects');clearSelectedClasses('s-classes');
-    showCrossPromo('student');
     document.getElementById('students').scrollIntoView({behavior:'smooth'});
-    showCrossPromo('Student');
+    showCrossPromo('student');
   }
 
   // ── SUBMIT: REVIEW ─────────────────────────────────────────────────────────
@@ -1948,29 +1986,6 @@ _Thank you for using EduMatch!_ 🙏`;
     [...el.options].forEach(o=>{ if(o.value===val||o.text===val) el.value=o.value; });
   }
 
-
-  // ── CROSS PROMOTION ───────────────────────────────────────────────────────
-  let _lastRegRole = '';
-  function showCrossPromo(role) {
-    _lastRegRole = role;
-    if(role === 'Tutor') {
-      document.getElementById('cross-icon').textContent = '📚';
-      document.getElementById('cross-title').textContent = 'Do you also need a tutor?';
-      document.getElementById('cross-body').textContent = "Are you looking for a tutor for your child or someone you know? Post a student requirement too — it's free and goes live instantly!";
-      document.getElementById('cross-yes').textContent = '📢 Post Student Requirement';
-    } else {
-      document.getElementById('cross-icon').textContent = '🎓';
-      document.getElementById('cross-title').textContent = 'Are you also a tutor?';
-      document.getElementById('cross-body').textContent = 'If you teach any subject, register as a tutor too! Your profile goes live immediately and students in your area can find you.';
-      document.getElementById('cross-yes').textContent = '🚀 Register as Tutor';
-    }
-    setTimeout(() => openModal('cross'), 1500);
-  }
-  function crossPromoYes() {
-    closeModal('cross');
-    if(_lastRegRole === 'Tutor') openModal('student');
-    else openModal('tutor');
-  }
 
   // ── ADMIN PANEL ───────────────────────────────────────────────────────────
   // The previous five-click logo shortcut exposed administrative controls
