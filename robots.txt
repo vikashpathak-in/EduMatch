@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vikashp23.github.io/EduMatch/sitemap.xml
+Sitemap: https://vikashpathak-in.github.io/EduMatch/sitemap.xml
