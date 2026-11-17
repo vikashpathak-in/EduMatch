@@ -744,7 +744,7 @@
         <li class="no">Top of search results</li>
         <li class="no">Gold highlighted card</li>
       </ul>
-      <button class="btn-plan btn-plan-accent" onclick="openUpgradeModal('basic')">Upgrade to Basic</button>
+      <button class="btn-plan btn-plan-accent" type="button" disabled style="opacity:.55;cursor:not-allowed;">Basic — Coming Soon</button>
     </div>
 
     <!-- FEATURED -->
@@ -762,7 +762,7 @@
         <li>Bold highlighted profile</li>
         <li>Priority WhatsApp support</li>
       </ul>
-      <button class="btn-plan btn-plan-gold" onclick="openUpgradeModal('featured')">Get Featured Now</button>
+      <button class="btn-plan btn-plan-gold" type="button" disabled style="opacity:.55;cursor:not-allowed;">Featured — Coming Soon</button>
     </div>
 
   </div>
@@ -1475,6 +1475,10 @@ _Thank you for using EduMatch!_ 🙏`;
   let _selectedPlan = 'featured';
 
   function openUpgradeModal(plan) {
+    if (!OWNER_UPI || OWNER_UPI.includes('PASTE_YOUR_UPI_ID')) {
+      alert('Paid tutor upgrades are coming soon. You can register and use the free listing now.');
+      return;
+    }
     _selectedPlan = plan || 'featured';
     selectPlan(_selectedPlan);
     closeModal('tutor');
