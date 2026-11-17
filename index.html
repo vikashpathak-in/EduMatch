@@ -1973,23 +1973,11 @@ _Thank you for using EduMatch!_ 🙏`;
   }
 
   // ── ADMIN PANEL ───────────────────────────────────────────────────────────
-  let _logoClicks = 0, _logoTimer;
-  document.querySelector('.nav-logo').addEventListener('click', function() {
-    _logoClicks++;
-    clearTimeout(_logoTimer);
-    _logoTimer = setTimeout(() => _logoClicks = 0, 2000);
-    if(_logoClicks >= 5) {
-      _logoClicks = 0;
-      openAdminPanel();
-    }
-  });
-
+  // The previous five-click logo shortcut exposed administrative controls
+  // without authentication. Keep the panel closed until Firebase Auth and
+  // restrictive Realtime Database security rules are configured.
   function openAdminPanel() {
-    document.getElementById('admin-panel').style.display = 'block';
-    document.getElementById('admin-count-tutors').textContent  = allTutors.length;
-    document.getElementById('admin-count-students').textContent = allStudents.length;
-    document.getElementById('admin-count-reviews').textContent =
-      document.querySelectorAll('.test-card').length;
+    alert('Admin tools are temporarily disabled while secure administrator sign-in is configured. Public tutor and student registration remains available.');
   }
 
   async function postAnnouncement() {
