@@ -610,6 +610,16 @@
     @media(prefers-reduced-motion:reduce){
       *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}
     }
+    .mobile-dock{display:none;}
+    @media(max-width:900px){
+      .mobile-dock{position:fixed;left:10px;right:10px;bottom:10px;z-index:350;display:grid;grid-template-columns:repeat(4,1fr);gap:4px;padding:8px;background:rgba(255,255,255,.96);border:1px solid #dce5ef;border-radius:17px;box-shadow:0 10px 35px rgba(18,36,59,.18);backdrop-filter:blur(14px);}
+      .mobile-dock a,.mobile-dock button{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;min-height:42px;text-decoration:none;color:#50627a;font:600 .68rem 'DM Sans',sans-serif;background:transparent;border:0;border-radius:10px;}
+      .mobile-dock a span,.mobile-dock button span{font-size:1.15rem;line-height:1.1;color:#2563eb;}
+      .mobile-dock button{background:#2563eb;color:#fff;}
+      .mobile-dock button span{color:#fff;}
+      body{padding-bottom:82px;}
+    }
+    @media(min-width:901px){.mobile-dock{display:none!important;}}
 </style>
 <link rel="canonical" href="https://vikashpathak-in.github.io/EduMatch/">
 <meta name="robots" content="index,follow,max-image-preview:large">
@@ -713,6 +723,12 @@
   </div>
 </nav>
 
+<div class="mobile-dock" aria-label="Quick navigation">
+  <a href="#search"><span>⌕</span>Search</a>
+  <a href="#tutors"><span>♧</span>Tutors</a>
+  <a href="#subjects"><span>▦</span>Subjects</a>
+  <button type="button" onclick="openModal('student')"><span>＋</span>Need a tutor</button>
+</div>
 
 <!-- ANNOUNCEMENT BANNER (controlled by Firebase) -->
 <div id="announcement-bar" style="display:none;position:fixed;top:72px;left:0;right:0;z-index:150;background:linear-gradient(135deg,#1a1a2e,#2d1b4e);color:#fff;padding:10px 48px;display:none;align-items:center;justify-content:space-between;gap:12px;font-size:.88rem;border-bottom:2px solid var(--gold);">
@@ -1902,8 +1918,6 @@ _Thank you for using EduMatch!_ 🙏`;
           ${subjects?`<strong>Subject:</strong> ${esc(subjects)}<br>`:''}
           ${classes?`<strong>Class:</strong> ${esc(classes)}<br>`:''}
           ${s.mode?`<strong>Mode:</strong> ${esc(s.mode)}<br>`:''}
-          ${s.location?`📍 ${esc(s.location)}`:''}
-          ${s.note?`<br><em>${esc(s.note).slice(0,60)}${s.note.length>60?'…':''}</em>`:''}
         </div>
         <a class="req-badge" href="https://wa.me/${OWNER_PHONE}?text=${enquiry}" target="_blank" rel="noopener">Ask EduMatch about this</a>
       </div>`;
